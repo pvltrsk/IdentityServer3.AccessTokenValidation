@@ -48,7 +48,7 @@ namespace IdentityServer3.AccessTokenValidation
             baseAddress += "connect/accesstokenvalidation";
             _tokenValidationEndpoint = baseAddress;
 
-            var handler = options.BackchannelHttpHandler ?? new WebRequestHandler();
+            /*var handler = options.BackchannelHttpHandler ?? new WebRequestHandler();
 
             if (options.BackchannelCertificateValidator != null)
             {
@@ -60,9 +60,9 @@ namespace IdentityServer3.AccessTokenValidation
                 }
 
                 webRequestHandler.ServerCertificateValidationCallback = options.BackchannelCertificateValidator.Validate;
-            }
+            }*/
 
-            _client = new HttpClient(handler);
+            _client = new HttpClient(/*handler*/);
             _options = options;
         }
 

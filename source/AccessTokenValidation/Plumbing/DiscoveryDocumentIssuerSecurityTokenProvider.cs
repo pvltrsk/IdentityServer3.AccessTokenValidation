@@ -40,7 +40,7 @@ namespace IdentityServer3.AccessTokenValidation
         {
             _logger = loggerFactory.Create(this.GetType().FullName);
 
-            var handler = options.BackchannelHttpHandler ?? new WebRequestHandler();
+            /*var handler = options.BackchannelHttpHandler ?? new WebRequestHandler();
 
             if (options.BackchannelCertificateValidator != null)
             {
@@ -51,9 +51,9 @@ namespace IdentityServer3.AccessTokenValidation
                     throw new InvalidOperationException("The back channel handler must derive from WebRequestHandler in order to use a certificate validator");
                 }
                 webRequestHandler.ServerCertificateValidationCallback = options.BackchannelCertificateValidator.Validate;
-            }
+            }*/
 
-            var adapteeConfigurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(discoveryEndpoint, new OpenIdConnectConfigurationRetriever(), new HttpDocumentRetriever(new HttpClient(handler)) { RequireHttps = options.RequireHttps })
+            var adapteeConfigurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(discoveryEndpoint, new OpenIdConnectConfigurationRetriever(), new HttpDocumentRetriever(new HttpClient(/*handler*/)) { RequireHttps = options.RequireHttps })
             {
                 AutomaticRefreshInterval = options.AutomaticRefreshInterval
             };

@@ -50,7 +50,7 @@ namespace IdentityServer3.AccessTokenValidation
             baseAddress += "connect/introspect";
             this.introspectionEndpoint = baseAddress;
 
-            var handler = options.IntrospectionHttpHandler ?? new WebRequestHandler();
+            /*var handler = options.IntrospectionHttpHandler ?? new WebRequestHandler();
 
             if (options.BackchannelCertificateValidator != null)
             {
@@ -62,9 +62,9 @@ namespace IdentityServer3.AccessTokenValidation
                 }
 
                 webRequestHandler.ServerCertificateValidationCallback = options.BackchannelCertificateValidator.Validate;
-            }
+            }*/
 
-            this.httpClient = new HttpClient(handler);
+            this.httpClient = new HttpClient(/*handler*/);
 
             _options = options;
         }
